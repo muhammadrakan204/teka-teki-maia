@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const PageOne = ({ result, setResult }) => {
@@ -8,16 +8,19 @@ const PageOne = ({ result, setResult }) => {
   const perhitungan = (anjas) => {
     setResult((prev) => prev + anjas);
   };
-  alert(
-    "link ini khusus diberikan hanya untuk maia, jika anda bukan maia silahkan tutup link ini"
-  );
-  alert(
-    "saya telah menyediakan beberapa pertanyaan untuk membuktikan apakah anda maia atau bukan, silahkan diisi dengan benar!"
-  );
-  alert(
-    "ada beberapa rules yang harus anda pahami, yaitu \n- PERTANYAAN BERUPA PILIHAN GANDA, JIKA ANDA SALAH MEMENCET JAWABAN ANDA, SILAHKAN REFRESH UNTUK MENGULANGI \n- JAWABAN ANDA HARUS BENAR SEMUA UNTUK MEMBUKTIKAN APAKAH ANDA MAIA ATAU BUKAN"
-  );
-  alert("Selamat mengerjakan");
+
+  useEffect(() => {
+    alert(
+      "link ini khusus diberikan hanya untuk maia, jika anda bukan maia silahkan tutup link ini"
+    );
+    alert(
+      "saya telah menyediakan beberapa pertanyaan untuk membuktikan apakah anda maia atau bukan, silahkan diisi dengan benar!"
+    );
+    alert(
+      "ada beberapa rules yang harus anda pahami, yaitu \n- PERTANYAAN BERUPA PILIHAN GANDA, JIKA ANDA SALAH MEMENCET JAWABAN ANDA, SILAHKAN REFRESH UNTUK MENGULANGI \n- JAWABAN ANDA HARUS BENAR SEMUA UNTUK MEMBUKTIKAN APAKAH ANDA MAIA ATAU BUKAN"
+    );
+    alert("Selamat mengerjakan");
+  }, []);
 
   return (
     <div className="App">
